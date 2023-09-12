@@ -1,5 +1,5 @@
 import './Cart.css'
-const Cart = ({cartItems, removeItem}) => {
+const Cart = ({cartItems, handleRemove}) => {
     return (
         <div className="cart">
             <h3>Number of Items in Cart: {cartItems.length}</h3>
@@ -9,7 +9,7 @@ const Cart = ({cartItems, removeItem}) => {
                      <img src={ci.img} />
                      <h4>Name: {ci.name}</h4>
                      <h4>Price: {ci.price}$</h4>
-                     <button onClick={() => removeItem(ci)}>Remove</button>
+                     <button onClick={() => handleRemove(ci)}>Remove</button>
                      </div>
                      )}
             </div>

@@ -19,12 +19,18 @@ const Bottles = () => {
     useEffect(()=>{
         localStorage.setItem('cart',JSON.stringify(cartItems))
     },[cartItems])
+
+    const handleRemove = (ci) => {
+        const newCart = cartItems.filter((cartItem) => cartItem !== ci)
+        setCartItems(newCart);
+    }
+
     const handleAdd = (b) => {
         const newCart = [...cartItems, b];
         setCartItems(newCart);
     }
     return (<>
-        <Cart cartItems={cartItems}></Cart>
+        <Cart cartItems={cartItems} handleRemove={handleRemove}></Cart>
         <div className="bottles">
             {
                 bottles.map((b,i) => <Bottle 
