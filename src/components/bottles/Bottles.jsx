@@ -3,17 +3,25 @@ import Bottle from "../bottle/bottle";
 import './bottles.css'
 import Cart from "../cart/Cart";
 
+const cartLocal = JSON.parse(localStorage.getItem('cart') || "[]")
+
 const Bottles = () => {
     const [bottles, setBottles] = useState([]);
-    const [cartItems, setCartItems] = useState([]);
+    const [cartItems, setCartItems] = useState(cartLocal);
+
+    
     
     useEffect(() =>{
         fetch('bottles.json')
         .then(res => res.json())
         .then(data => setBottles(data))
     },[])
+    useEffect(()=>{
+        localStorage.setItem('cart',JSON.stringify(cartItems))
+    },[cartItems])
     const handleAdd = (b) => {
-        setCartItems([...cartItems, b]);
+        const newCart = [...cartItems, b];
+        setCartItems(newCart);
     }
     return (<>
         <Cart cartItems={cartItems}></Cart>
