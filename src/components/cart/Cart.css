@@ -1,0 +1,15 @@
+.cart {
+  background-color: black;
+  padding: 20px 40px;
+  border-radius: 10px;
+  margin: 40px 0px 0px 0px;
+}
+
+.cart img {
+  width: 200px;
+}
+.cih {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}

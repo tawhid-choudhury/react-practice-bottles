@@ -5,4 +5,21 @@
 }
 .bottle img {
   width: 350px;
+  margin-left: 15px;
+  border-radius: 15px;
+}
+.bottle button {
+  margin-left: 15px;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+}
+.bottle button:hover {
+  background-color: gray;
+  cursor: pointer;
 }
